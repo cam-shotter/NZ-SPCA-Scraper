@@ -1,11 +1,11 @@
-### NZ SPCA Scraper
+### NZ SPCA Wellington Scraper
 
-I was talking with <a href="https://github.com/cam-shotter">Cam</a> who was having issues with how to go about scraping the SPCA site.
+I was having issues with how to go about scraping the SPCA Wellington site and talked with <a href="https://github.com/marcus-crane">Marcus</a> who is a lot more knowledgeable than myself in these things.
 
-I assumed this was going to be pretty straight forward but interestingly enough, they use lazy loading because of how wonky the site design is.
+The SPCA site uses lazy loading so obtaining all the data at once proved to be more challenging than he thought.
 
-It makes a XMLHttpRequest to fetch more data once you scroll to the bottom of the page so I slapped that URL into Postman along with my browsers cookie and a JSON object which gave me back a successful result!
+Once you scroll to the bottom of the page it makes a XMLHttpRequest to fetch more data, so he put that URL into Postman along with the browser's cookie and a JSON object which returned all the requested, current animals!
 
-All I had to do them was post off the data and traverse the response to pluck out the data.
+He took me through roughly how he did it and I attempted my own version
 
-This implementation is pretty messy since it was a quick practice exercise but I'll probably revisit it in the future and implement it with streams or something interesting.
+The next step was to parse the data and feed it into a database so I could use it for my app.
